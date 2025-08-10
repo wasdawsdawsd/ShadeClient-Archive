@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Team Shade — Forge Clients</title>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap');
+    body {
+        margin: 0;
+        font-family: 'Share Tech Mono', monospace;
+        background: radial-gradient(circle at center, #1a1a1a 0%, #0f0f14 100%);
+        color: #e0e0ff;
+        overflow-x: hidden;
+    }
+
+    nav {
+        background: linear-gradient(90deg, #8a4dff, #3dd6ff);
+        padding: 15px 30px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        box-shadow: 0 0 20px rgba(138,77,255,0.6);
+    }
+    nav h1 {
+        margin: 0;
+        font-size: 22px;
+        color: white;
+        letter-spacing: 2px;
+    }
+    nav ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        gap: 20px;
+    }
+    nav ul li a {
+        color: white;
+        text-decoration: none;
+        transition: color 0.2s;
+    }
+    nav ul li a:hover {
+        color: #ffe680;
+    }
+
+    .hero {
+        text-align: center;
+        padding: 80px 20px 50px;
+    }
+    .hero h2 {
+        font-size: 48px;
+        background: linear-gradient(90deg, #8a4dff, #3dd6ff);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        margin-bottom: 10px;
+    }
+    .hero p {
+        font-size: 16px;
+        color: #cccce0;
+        max-width: 650px;
+        margin: auto;
+        line-height: 1.6;
+    }
+
+    .cards {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+        justify-content: center;
+        padding: 50px 20px;
+    }
+    .card {
+        background: rgba(255,255,255,0.05);
+        border: 1px solid rgba(255,255,255,0.1);
+        border-radius: 10px;
+        width: 220px;
+        padding: 20px;
+        text-align: center;
+        backdrop-filter: blur(4px);
+        transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .card:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 0 20px rgba(138,77,255,0.6);
+    }
+    .card h3 {
+        color: #b28cff;
+        margin-bottom: 8px;
+    }
+    .card p {
+        font-size: 13px;
+        color: #cfcfe6;
+        min-height: 40px;
+    }
+    .card a.download-link {
+        display: inline-block;
+        margin-top: 10px;
+        color: #8a4dff;
+        font-weight: bold;
+        text-decoration: none;
+        transition: color 0.2s;
+    }
+    .card a.download-link:hover {
+        color: #3dd6ff;
+    }
+
+    .grid {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 200%;
+        height: 200%;
+        background-image: linear-gradient(rgba(255,255,255,0.05) 1px, transparent 1px),
+                          linear-gradient(90deg, rgba(255,255,255,0.05) 1px, transparent 1px);
+        background-size: 40px 40px;
+        animation: moveGrid 20s linear infinite;
+        z-index: -1;
+    }
+    @keyframes moveGrid {
+        from { transform: translate(0, 0); }
+        to { transform: translate(-40px, -40px); }
+    }
+</style>
+</head>
+<body>
+
+<div class="grid"></div>
+
+<nav>
+    <h1>TEAM SHADE</h1>
+    <ul>
+        <li><a href="index.html">Main</a></li>
+        <li><a href="External.html">External</a></li>
+        <li><a href="Forge.html">Forge</a></li>
+        <li><a href="Ravens.html">Ravens</a></li>
+        <li><a href="Liquidbounce.html">Liquidbounce</a></li>
+        <li><a href="Tools.html">Tools</a></li>
+        <li><a href="VPN.html">VPN</a></li>
+    </ul>
+</nav>
+
+<section class="hero">
+    <h2>Forge Clients</h2>
+    <p>
+        Collection of Forge based clients.<br>
+        Click the download button to get the client files.
+    </p>
+</section>
+
+<section class="cards">
+    <div class="card">
+        <h3>Lowkey V2</h3>
+        <p>a forge ghost client. not have many modules. trash.</p>
+        <a href="https://mimhax.netlify.app/Files/lowkey.jar" target="_blank" class="download-link">Download</a>
+    </div>
+    <div class="card">
+        <h3>Skilled V3</h3>
+        <p>a forge ghost client by skilld. but killaura sucks......</p>
+        <a href="https://liquidbounce.net/" target="_blank" class="download-link">Download</a>
+    </div>
+    <div class="card">
+        <h3>Sapphire</h3>
+        <p>best trash^^</p>
+        <a href="https://mimhax.netlify.app/Files/Sapphire-0.0.1.jar" target="_blank" class="download-link">Download</a>
+    </div>
+</section>
+
+<!-- 커스텀 커서 요소 -->
+<div id="custom-cursor"></div>
+
+<script>
+  const cursor = document.getElementById('custom-cursor');
+
+  window.addEventListener('mousemove', e => {
+    cursor.style.left = e.clientX + 'px';
+    cursor.style.top = e.clientY + 'px';
+  });
+</script>
+
+<style>
+  /* 기본 마우스 커서 숨기기 */
+  body, a, button, input, textarea {
+    cursor: none !important;
+  }
+
+  /* 커스텀 커서 모양 */
+  #custom-cursor {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 14px;
+    height: 14px;
+    background: #b28cff; /* 보라빛 형광 */
+    border-radius: 50%;
+    pointer-events: none;
+    transform: translate(-50%, -50%);
+    box-shadow: 0 0 8px 2px #b28cff;
+    z-index: 9999;
+    transition: background 0.15s ease, box-shadow 0.15s ease;
+  }
+</style>
+
+</body>
+</html>
